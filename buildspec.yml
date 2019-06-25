@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install
+      - zip -r code.zip .
+  post_build:
+    finally:
+      - aws lambda update-function-code --function-name $FUNCTION_NAME --zip-file fileb://./code.zip

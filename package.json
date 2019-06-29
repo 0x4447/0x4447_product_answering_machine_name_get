@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "locally": "node -e 'require(\"./index\").handler(require(\"./lambda-payloads.json\"), \"{}\", function(error, response) {(error) ? console.log(\"Error: \", error) : console.log(\"Response: \", response) })'",
+    "locally": "node -e 'require(\"./index\").handler(require(\"./lambda-payloads.json\")).then(function(response){ console.info(response) }).catch(function(error){ console.error(error) })'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +18,6 @@
   },
   "homepage": "https://github.com/0x4447/0x4447-Project-Email-Lambda-Inbound#readme",
   "dependencies": {
-    "aws-sdk": "^2.388.0",
-    "mailparser": "^2.4.3",
-    "mime": "^2.4.0"
+    "aws-sdk": "^2.388.0"
   }
 }

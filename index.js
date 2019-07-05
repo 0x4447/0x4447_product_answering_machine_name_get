@@ -24,7 +24,7 @@ exports.handler = (event) => {
         //  2.  Prepare the query.
         //
         let params = {
-            TableName: "answering_machine",
+            TableName: "0x4447_connect_sessions",
             Key: {
                 id: phone_nr,
                 type: 'basic'
